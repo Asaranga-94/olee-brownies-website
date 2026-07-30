@@ -336,3 +336,10 @@ body{
         font-size:34px;
     }
 }
+.product-images img{
+    display:block !important;
+    width:50% !important;
+    height:180px !important;
+    object-fit:cover;
+    border-radius:12px;
+}
