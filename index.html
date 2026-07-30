@@ -13,7 +13,51 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const track = document.querySelector("#comboSlider .slider-track");
+    const prev = document.getElementById("comboPrev");
+    const next = document.getElementById("comboNext");
+    const dot1 = document.getElementById("dot1");
+    const dot2 = document.getElementById("dot2");
+
+    let slide = 0;
+
+    function showSlide(number) {
+
+        slide = number;
+
+        if (slide === 0) {
+            track.style.transform = "translateX(0)";
+            dot1.classList.add("active");
+            dot2.classList.remove("active");
+        } else {
+            track.style.transform = "translateX(-50%)";
+            dot1.classList.remove("active");
+            dot2.classList.add("active");
+        }
+
+    }
+
+    next.addEventListener("click", function () {
+        showSlide(slide === 0 ? 1 : 0);
+    });
+
+    prev.addEventListener("click", function () {
+        showSlide(slide === 0 ? 1 : 0);
+    });
+
+    dot1.addEventListener("click", function () {
+        showSlide(0);
+    });
+
+    dot2.addEventListener("click", function () {
+        showSlide(1);
+    });
+
+});
+</script>
 <body>
 
     <!-- Announcement Bar -->
@@ -94,22 +138,50 @@
 
     <div class="products-grid">
 
-        <!-- 04 Combo Mini Pack -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/04 COMBO mini pack 01.jpg" alt="04 Combo Mini Pack">
-                <img src="images/04 COMBO mini pack 02.jpg" alt="04 Combo Mini Pack">
-            </div>
-            <h3>04 Combo Mini Pack</h3>
-            <p>
-                "Budget Pack - taste 3 delicious flavors! 
-Topped with chocolate chips & fruits. 
-Great value for this yummy brownie!"
-            </p>
-            <h4>Rs. 3000</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%2004%20COMBO%20MINI%20PACK."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
+       <!-- 04 Combo Mini Pack -->
+<div class="product-card">
+
+    <div class="product-slider" id="comboSlider">
+
+        <div class="slider-track">
+            <img src="images/04 COMBO mini pack 01.jpg" alt="04 Combo Mini Pack">
+            <img src="images/04 COMBO mini pack 02.jpg" alt="04 Combo Mini Pack">
         </div>
+
+        <button type="button" class="slider-btn slider-prev" id="comboPrev">
+            &#10094;
+        </button>
+
+        <button type="button" class="slider-btn slider-next" id="comboNext">
+            &#10095;
+        </button>
+
+        <div class="slider-dots">
+            <span class="slider-dot active" id="dot1"></span>
+            <span class="slider-dot" id="dot2"></span>
+        </div>
+
+    </div>
+
+    <h3>04 Combo Mini Pack</h3>
+
+    <p>
+        "Budget Pack - taste 3 delicious flavors!
+        Topped with chocolate chips & fruits.
+        Great value for this yummy brownie!"
+    </p>
+
+    <h4>Rs. 3000</h4>
+
+    <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%2004%20COMBO%20MINI%20PACK."
+       class="order-btn"
+       target="_blank">
+       Order on WhatsApp
+    </a>
+
+</div>
+
+</div>
 
         <!-- Cute Mini Pack -->
         <div class="product-card">
@@ -147,10 +219,10 @@ Can be customized with your choice of toppings for events or parties."
 
         <!-- Cherry Package -->
         <div class="product-card">
-            <div class="product-images">
-                  <img src="images/Six cherry -01.jpg" alt="Cherry Package">
-                  <img src="images/Six cherry -02.jpg" alt="Cherry Package">
-            </div>
+           <div class="product-images">
+    <img src="images/Six cherry -01.jpg" alt="Cherry Package">
+    <img src="images/Six cherry -02.jpg" alt="Cherry Package">
+</div>
             <h3>Cherry / Strawberry Package</h3>
             <p>
                 Includes 06 pieces (approx  3×2 inches each) topped with cherry or strawberry. Flavours are choose from chocolate, white chocolate . 
