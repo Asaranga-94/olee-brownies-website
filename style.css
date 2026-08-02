@@ -585,3 +585,221 @@ body{
     }
 
 }
+
+/* =========================
+   NEW PRODUCT CATALOG CARDS
+   ========================= */
+
+.catalog-grid{
+    width:100%;
+    max-width:1200px;
+    margin:50px auto 0;
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:40px;
+    align-items:start;
+}
+
+.catalog-card{
+    display:block;
+    width:100%;
+    background:white;
+    color:#2b1b14;
+    text-decoration:none;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.catalog-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.12);
+}
+
+.catalog-card-image{
+    display:block;
+    width:100%;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+}
+
+.catalog-card-name{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:18px 14px;
+    font-size:18px;
+    letter-spacing:.06em;
+}
+
+/* =========================
+   PRODUCT DETAILS PAGE
+   ========================= */
+
+.details-back-top{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    border:1px solid rgba(255,255,255,.45);
+    padding:10px 16px;
+    border-radius:30px;
+}
+
+.product-details-page{
+    padding:70px 8% 100px;
+}
+
+.details-layout{
+    max-width:1150px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    gap:55px;
+    align-items:start;
+}
+
+.details-main-image-wrap{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    border-radius:22px;
+    background:#f5f5f5;
+}
+
+.details-main-image{
+    display:block;
+    width:100%;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+}
+
+.details-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:44px;
+    border:0;
+    border-radius:50%;
+    background:rgba(43,27,20,.75);
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.details-prev{left:14px}
+.details-next{right:14px}
+
+.details-thumbnails{
+    display:flex;
+    gap:12px;
+    margin-top:14px;
+    flex-wrap:wrap;
+}
+
+.details-thumb{
+    width:78px;
+    height:78px;
+    padding:0;
+    overflow:hidden;
+    border:2px solid transparent;
+    border-radius:12px;
+    background:none;
+    cursor:pointer;
+}
+
+.details-thumb.active{border-color:#2b1b14}
+
+.details-thumb img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.details-info{
+    padding-top:10px;
+}
+
+.details-label{
+    font-size:12px;
+    letter-spacing:2px;
+    opacity:.6;
+    margin-bottom:14px;
+}
+
+.details-info h1{
+    font-size:38px;
+    line-height:1.25;
+    letter-spacing:2px;
+}
+
+.details-price{
+    font-size:25px;
+    margin:24px 0;
+}
+
+.details-divider{
+    height:1px;
+    background:rgba(43,27,20,.12);
+    margin:25px 0;
+}
+
+.details-info h2{
+    font-size:17px;
+    letter-spacing:1px;
+    margin-bottom:14px;
+}
+
+.details-info > p{
+    font-size:16px;
+    line-height:2;
+    white-space:pre-line;
+    opacity:.75;
+}
+
+.details-order-btn{
+    display:block;
+    margin-top:30px;
+    padding:16px 18px;
+    background:#25D366;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.details-order-btn:hover{transform:scale(1.02)}
+
+.product-not-found{
+    max-width:700px;
+    margin:80px auto;
+    text-align:center;
+}
+
+.back-products{
+    display:inline-block;
+    margin-top:20px;
+    color:#2b1b14;
+}
+
+@media(max-width:1150px){
+    .catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+
+@media(max-width:900px){
+    .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px;}
+    .details-layout{grid-template-columns:1fr; gap:35px;}
+}
+
+@media(max-width:600px){
+    .catalog-grid{grid-template-columns:1fr; max-width:330px;}
+    .catalog-card-name{min-height:68px; font-size:17px;}
+    .product-details-page{padding:45px 20px 70px;}
+    .details-info h1{font-size:30px;}
+    .details-back-top{font-size:12px; padding:8px 12px;}
+}

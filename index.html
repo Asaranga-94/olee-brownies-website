@@ -1,564 +1,104 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Olee ' Brownies offers premium homemade brownies, brownie cakes, wedding packages, birthday packages, gift boxes, and island-wide delivery across Sri Lanka. Freshly baked for every order.">
-    <title>Olee ' Brownies | Premium Homemade Brownies & Brownie Cakes in Sri Lanka</title>
-    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Olee ' Brownies offers premium homemade brownies, brownie cakes, wedding packages, birthday packages, gift boxes, and island-wide delivery across Sri Lanka. Freshly baked for every order." name="description"/>
+<title>Olee ' Brownies | Premium Homemade Brownies &amp; Brownie Cakes in Sri Lanka</title>
+<link href="images/logo.jpg" rel="icon" type="image/jpeg"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const track = document.querySelector("#comboSlider .slider-track");
-    const prev = document.getElementById("comboPrev");
-    const next = document.getElementById("comboNext");
-    const dot1 = document.getElementById("dot1");
-    const dot2 = document.getElementById("dot2");
-
-    let slide = 0;
-
-    function showSlide(number) {
-
-        slide = number;
-
-        if (slide === 0) {
-            track.style.transform = "translateX(0)";
-            dot1.classList.add("active");
-            dot2.classList.remove("active");
-        } else {
-            track.style.transform = "translateX(-50%)";
-            dot1.classList.remove("active");
-            dot2.classList.add("active");
-        }
-
-    }
-
-    next.addEventListener("click", function () {
-        showSlide(slide === 0 ? 1 : 0);
-    });
-
-    prev.addEventListener("click", function () {
-        showSlide(slide === 0 ? 1 : 0);
-    });
-
-    dot1.addEventListener("click", function () {
-        showSlide(0);
-    });
-
-    dot2.addEventListener("click", function () {
-        showSlide(1);
-    });
-
-});
-</script>
 <body>
-
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-          •  Pre-Orders & Bank Transfers Only • Island-wide Delivery Across Sri Lanka
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+          •  Pre-Orders &amp; Bank Transfers Only • Island-wide Delivery Across Sri Lanka
     </div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">OLEE ' BROWNIES</div>
-
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#products">Order Now</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero" id="home">
-        <div class="hero-content">
-
-            <h1>OLEE ' BROWNIES</h1>
-
-            <p>
+<!-- Navigation -->
+<nav class="navbar">
+<div class="logo">OLEE ' BROWNIES</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#story">Our Story</a></li>
+<li><a href="#products">Order Now</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<!-- Hero Section -->
+<header class="hero" id="home">
+<div class="hero-content">
+<h1>OLEE ' BROWNIES</h1>
+<p>
                 Premium homemade brownies crafted with love and baked fresh for every order.
             </p>
-
-            <div class="hero-tags">
-                <span> Premium Ingredients</span>
-                <span> Pre-Orders Only</span>
-                <span> Island-wide Delivery</span>
-            </div>
-
-            <div class="hero-buttons">
-                <a href="#products" class="btn primary">
+<div class="hero-tags">
+<span> Premium Ingredients</span>
+<span> Pre-Orders Only</span>
+<span> Island-wide Delivery</span>
+</div>
+<div class="hero-buttons">
+<a class="btn primary" href="#products">
                     View Brownie Packs
                 </a>
-
-                <a href="https://wa.me/94740463349"
-                   target="_blank"
-                   class="btn secondary">
+<a class="btn secondary" href="https://wa.me/94740463349" target="_blank">
                     WhatsApp Us
                 </a>
-            </div>
-
-        </div>
-    </header>
-
-    <!-- Story -->
-    <section id="story" class="section">
-        <h2>Our Story</h2>
-
-        <p>
+</div>
+</div>
+</header>
+<!-- Story -->
+<section class="section" id="story">
+<h2>Our Story</h2>
+<p>
             Since December 2020, Olee ' Brownies has been creating rich,
             fudgy homemade brownies for customers all across Sri Lanka.
 
             Every brownie is baked fresh after your order is placed,
             ensuring exceptional taste, freshness, and quality.
         </p>
-
-        <p>
+<p>
             We proudly operate on a pre-order basis because we believe
             every customer deserves brownies that are freshly baked just for them.
         </p>
-    </section>
-
-    <!-- Products -->
-  <section id="products" class="section">
-
-    <h2>Order Now</h2>
-
-    <p class="section-subtitle">
-        Freshly baked for every order • Pre-Orders Only
-    </p>
-
-    <div class="products-grid">
-
-       <!-- 04 Combo Mini Pack -->
-<div class="product-card">
-
-    <div class="product-slider" id="comboSlider">
-
-        <div class="slider-track">
-            <img src="images/04 COMBO mini pack 01.jpg" alt="04 Combo Mini Pack">
-            <img src="images/04 COMBO mini pack 02.jpg" alt="04 Combo Mini Pack">
-        </div>
-
-        <button type="button" class="slider-btn slider-prev" id="comboPrev">
-            &#10094;
-        </button>
-
-        <button type="button" class="slider-btn slider-next" id="comboNext">
-            &#10095;
-        </button>
-
-        <div class="slider-dots">
-            <span class="slider-dot active" id="dot1"></span>
-            <span class="slider-dot" id="dot2"></span>
-        </div>
-
-    </div>
-
-    <h3>04 Combo Mini Pack</h3>
-
-    <p>
-        "Budget Pack - taste 3 delicious flavors!
-        Topped with chocolate chips & fruits.
-        Great value for this yummy brownie!"
-    </p>
-
-    <h4>Rs. 3000</h4>
-
-    <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%2004%20COMBO%20MINI%20PACK."
-       class="order-btn"
-       target="_blank">
-       Order on WhatsApp
-    </a>
-
-</div>
-
-</div>
-
-        <!-- Cute Mini Pack -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Cute mini pack 01.jpg" alt="Cute Mini Pack">
-                <img src="images/Cute mini pack 02.jpg" alt="Cute Mini Pack">
-            </div>
-            <h3>Cute Mini Pack</h3>
-            <p>
-                Customize it your way. Topping Include : Almonds , Chocolate Chips, White Chocolate Chips , Bueno Chocolate , KitKat , Oreo biscuit , Kinder Chocolate , Marshmallows, Pistachio Chocolate , Jujubes , Nuts & Others. 
-            </p>
-            <h4>Rs. 3800</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20cute%20mini%20package."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- 12 Mini Pack -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/12 mini 01.jpg" alt="12 Mini Pack">
-                <img src="images/12 mini 02.jpg" alt="12 Mini Pack">
-            </div>
-            <h3>12 Mini Pack</h3>
-            <p>
-                "Our newest bite-sized treat – 1.5 inch brownies in a pack of 12!
-Rich chocolate flavor topped with peanut crumb & rainbow sprinkles.
-Perfectly adorable, bite-size goodness, full-on flavor!
-Available for pre-order in chocolate flavor only.
-Can be customized with your choice of toppings for events or parties."
-            </p>
-            <h4>Rs. 3400</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%2012%20mini%20brownie%20pack."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Cherry Package -->
-        <div class="product-card">
-           <div class="product-images">
-    <img src="images/Six cherry -01.jpg" alt="Cherry Package">
-    <img src="images/Six cherry -02.jpg" alt="Cherry Package">
-</div>
-            <h3>Cherry / Strawberry Package</h3>
-            <p>
-                Includes 06 pieces (approx  3×2 inches each) topped with cherry or strawberry. Flavours are choose from chocolate, white chocolate . 
-            </p>
-            <h4>Rs. 6000</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20Cherry%20or%20strawberry%20package."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Big Six Mix -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Six MIX 01.jpg" alt="Big Six Mix Package">
-                <img src="images/Six MIX 02.jpg" alt="Big Six Mix Package">
-
-            </div>
-            <h3>Big Six Mix Package</h3>
-            <p>
-                Includes 06 large brownie pieces ( approx 3*2 inches each) with the mix of toppings : almonds , chocolate chips , bueno chocolate , kitkat , biscoff biscuits , blueberry , marshmallows , oreo biscuit & cherry.
-            </p>
-            <h4>Rs. 7000</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20BIG%20six%20mix%20package."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Big PCS Normal -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Six normal 01.jpg" alt="Big PCS Normal Package">
-                <img src="images/Six normal 02.jpg" alt="Big PCS Normal Package">
-            </div>
-            <h3>Big PCS Normal Package</h3>
-            <p>
-                Includes 06 pieces (approx  3×2 inches each) with toppings : Oreo biscuits , chocolate chips & fruits. Flavours are choose from chocolate and white chocolate. 
-            </p>
-            <h4>From Rs. 5500</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20BIG%20PCS%20normal%20PACKAGE."
-
-           
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Fix Large -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Fix large 01.jpg" alt="Fix Large Package">
-                <img src="images/Fix large 02.jpg" alt="Fix Large Package">
-            </div>
-            <h3>Fix Large Package</h3>
-            <p>
-                "Choose from 2 flavors or customize your own!
-Deliciously made just the way you like. Toppings include: almonds, chocolate chips, KitKat, Biscoff biscuit, marshmallows, Oreo biscuit & cherry."
-            </p>
-            <h4>From Rs. 5800</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20FIX%20PACKAGES."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Fix Small -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Fix small - 01.jpg" alt="Fix Small Package">
-                <img src="images/Fix small - 02.jpg" alt="Fix Small Package">
-            </div>
-            <h3>Fix Small Package</h3>
-            <p>
-                "Customizable with your preferred toppings and flavors toppings: Oreo biscuits, almonds, marshmallows. Chocolate Flavor only."
-            </p>
-            <h4>Rs. 4800</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20Fix%20Small%20Pack."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Finger Brownies -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Finger pack -01.jpg" alt="Finger Brownies">
-                <img src="images/Finger pack -02.jpg" alt="Finger Brownies">
-            </div>
-            <h3>Finger Brownies</h3>
-            <p>
-               "Each piece is 3*1.5inches, slim and neat finger-style brownies. 
-Topped with chocolate chips & colorful mixed fruits & others.
-Customize with up to 2 flavors of your choice."
-            </p>
-            <h4>Rs. 6000</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20FINGER%20BROWNIE%20pack."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- 09 Large -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/09 large 01.jpg" alt="09 PCS Large Pack">
-                <img src="images/09 large 02.jpg" alt="09 PCS Large Pack">
-            </div>
-            <h3>09 PCS Large Pack</h3>
-            <p>
-               "
-Each piece approx. 2×2.5 inches.
-Customizable options available – freshly baked in 2 tasty flavors! Topping varieties: Almonds | Oreo Biscuits | Chocolate Chipz | Chocolates | KitKat | Biscuits | Strawberry |Chocolate Ganache | Others."
-            </p>
-            <h4>Rs. 6800</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%2009%20pcs%20LARGE%20PACK."
-
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- 16 Large -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/16 large 01.jpg" alt="16 Large PCS Package">
-                <img src="images/16 large 02.jpg" alt="16 Large PCS Package">
-            </div>
-            <h3>16 Large PCS Package</h3>
-            <p>
-                An extra generous pack with 16 rich, fudgy brownies! available for pre order in chocolate flavor only. You can also customize your toppings – choco chips, white choco chips ,kitkat , oreo biscuits , chocolates , marshmallows  , blueberry , cherry & twix chocolates & others.
- A flavor-packed brownie experience made just for you!
-            </p>
-            <h4>Rs. 7800</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%2016%20LARGE%20PCS%20PACKAGE."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Marshmallow -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Marshmallows 01.jpg" alt="Marshmallow Package">
-                <img src="images/Marshmallows 02.jpg" alt="Marshmallow Package">
-            </div>
-            <h3>12 PCS Marshmallow Package</h3>
-            <p>
-                Marshmallows Brownies - 12 pcs Large Pack 
-Available only as a full pack. Each piece approx. 2 x 2.5
-Soft, gooey, and loaded with marshmallows & bueno white chocolates . Available for pre-order in chocolate flavor only.
-            </p>
-            <h4>Rs. 7200</h4>
-            <a href="https://wa.me/94740463349?text=Hi!%20I'd%20like%20to%20order%20the%2012%20pcs%20LARGE%20MARSHMALLOWS%20BROWNIE%20PACKAGE."
-
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Brownie Mini Cake -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Brownie Mini Cake 01.jpg" alt="Brownie Mini Cake">
-                <img src="images/Brownie Mini Cake 02.jpg" alt="Brownie Mini Cake">
-            </div>
-            <h3>Brownie Mini Cake</h3>
-            <p>
-               Available in Chocolate or White Chocolate flavors. 
-               Pre-order now and customize your cake to match your special occasion.
-            </p>
-            <h4>From Rs. 6000</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20Brownie%20Mini%20Cake%20(Layered/Sliced)."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-
-        <!-- Brownie Cakes  -->
-        <div class="product-card">
-            <div class="product-images">
-                <img src="images/Brownies cakes 01.jpg" alt="Brownie Cakes">
-                <img src="images/Brownies cakes 02.jpg" alt="Brownie Cakes">
-            </div>
-            <h3>Brownie Cakes ( LARGE & SMALL SIZES ) </h3>
-            <p>
-                "Available in round, square, or heart shapes. 
-Enjoy the rich flavors of chocolate and red velvet. 
-Customize your cake to suit your preferences — just let us know your desired design and flavor combination!"
-            </p>
-            <h4>Custom Pricing</h4>
-            <a href="https://wa.me/94740463349?text=Hi%20Browniee,%20I'd%20like%20to%20order%20the%20BROWNIE%20CAKES%20(LARGE%20%26%20SMALL%20SIZES)."
-               class="order-btn" target="_blank">Order on WhatsApp</a>
-        </div>
-<!-- =========================
-     NEW PRODUCTS
-========================= -->
-
-<!-- Wedding Packages -->
-<div class="product-card">
-    <div class="product-images">
-        <img src="images/Wedding 01.jpg" alt="Wedding Packages">
-        <img src="images/Wedding 02.jpg" alt="Wedding Packages">
-
-    </div>
-
-    <h3>Wedding Packages</h3>
-
-    <p>
-        Beautifully customized brownie packages made to add a sweet touch to your special day. Choose your theme, colours, packing
-and details to match your wedding celebration.
-    </p>
-
-    <h4>Customisable Pricing</h4>
-
-    <a href="https://wa.me/94740463349?text=Hi%20Olee%20Brownies,%20I'd%20like%20to%20know%20more%20about%20your%20Wedding%20Packages."
-       class="order-btn"
-       target="_blank">
-       Order on WhatsApp
-    </a>
-</div>
-
-<!-- Birthday Packages -->
-<div class="product-card">
-    <div class="product-images">
-        <img src="images/Birthday 01.jpg" alt="Birthday Packages">
-        <img src="images/Birthday 02.jpg" alt="Birthday Packages">
-    </div>
-
-    <h3>Birthday Packages</h3>
-
-    <p>
-        Make birthdays extra special with personalized brownie boxes , cups & treats designed with your favorite flavors, themes & messages.
-    </p>
-
-    <h4>Customisable Pricing</h4>
-
-    <a href="https://wa.me/94740463349?text=Hi%20Olee%20Brownies,%20I'd%20like%20to%20know%20more%20about%20your%20Birthday%20Packages."
-       class="order-btn"
-       target="_blank">
-       Order on WhatsApp
-    </a>
-</div>
-
-<!-- Party / Event Packages -->
-<div class="product-card">
-    <div class="product-images">
-        <img src="images/Party Events 01.jpg" alt="Party / Event Packages">
-        <img src="images/Party Events 02.jpg" alt="Party / Event Packages">
-    </div>
-
-    <h3>Party / Event Packages</h3>
-
-    <p>
-        Customized according to your event style , quantity & celebration needs.               
-    </p>
-
-    <h4>Customisable Pricing</h4>
-
-    <a href="https://wa.me/94740463349?text=Hi%20Olee%20Brownies,%20I'd%20like%20to%20know%20more%20about%20your%20Party%20/%20Event%20Packages."
-       class="order-btn"
-       target="_blank">
-       Order on WhatsApp
-    </a>
-</div>
-
-<!-- Gift Packages -->
-<div class="product-card">
-    <div class="product-images">
-        <img src="images/Gift Packages 01.jpg" alt="Gift Packages">
-        <img src="images/Gift Packages 02.jpg" alt="Gift Packages">
-    </div>
-
-    <h3>Gift Packages</h3>
-
-    <p>
-       Thoughtfully designed brownie gifts for surprises, celebrations & memorable moments.
-
-    </p>
-
-    <h4>Customisable Pricing</h4>
-
-    <a href="https://wa.me/94740463349?text=Hi%20Olee%20Brownies,%20I'd%20like%20to%20know%20more%20about%20your%20Gift%20Packages."
-       class="order-btn"
-       target="_blank">
-       Order on WhatsApp
-    </a>
-</div>
-
-<!-- Budget Treats -->
-<div class="product-card">
-    <div class="product-images">
-        <img src="images/Budget Treats 01.jpg" alt="Budget Treats">
-        <img src="images/Budget Treats 02.jpg" alt="Budget Treats">
-    </div>
-
-    <h3>Budget Treats</h3>
-
-    <p>
-        Simple, affordable and delicious brownie options made for every  special moment.
-    </p>
-
-    <h4>Customisable Pricing</h4>
-
-    <a href="https://wa.me/94740463349?text=Hi%20Olee%20Brownies,%20I'd%20like%20to%20know%20more%20about%20your%20Budget%20Treats."
-       class="order-btn"
-       target="_blank">
-       Order on WhatsApp
-    </a>
-</div>
-    </div>
-
 </section>
+<!-- Products -->
+<section class="section" id="products"><h2>Order Now</h2><p class="section-subtitle">Freshly baked for every order • Pre-Orders Only</p><div class="catalog-grid" id="productGrid"></div></section>
 
-       
 
-        </div>
-
-    </section>
-
-    <!-- Reviews -->
-    <section id="reviews" class="section">
-        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-b233a08d-9546-4396-a760-d1d3bc29a9dc" data-elfsight-app-lazy></div>
-    </section>
-
-    <!-- Contact -->
-    <footer id="contact" class="footer">
-
-        <h3>OLEE ' BROWNIES</h3>
-
-        <p>
+<!-- Reviews -->
+<section class="section" id="reviews">
+<!-- Elfsight Google Reviews | Untitled Google Reviews -->
+<script async="" src="https://elfsightcdn.com/platform.js"></script>
+<div class="elfsight-app-b233a08d-9546-4396-a760-d1d3bc29a9dc" data-elfsight-app-lazy=""></div>
+</section>
+<!-- Contact -->
+<footer class="footer" id="contact">
+<h3>OLEE ' BROWNIES</h3>
+<p>
             Freshly baked for every order.
         </p>
-
-        <p>
+<p>
              Pre-Orders Only
         </p>
-
-        <p>
+<p>
              Island-wide Delivery Across Sri Lanka
         </p>
-
-        <p>
+<p>
              WhatsApp:
             <a href="https://wa.me/94740463349">
                 +94 74 046 3349
             </a>
-        </p>
-
-        <p>
+</p>
+<p>
             © 2026 Olee ' Brownies. All Rights Reserved.
         </p>
-
-    </footer>
-
+</footer>
+<script src="products.js"></script>
 </body>
+
 </html>
