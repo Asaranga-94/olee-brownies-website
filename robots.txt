@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asaranga-94.github.io/olee-brownies-website/sitemap.xml
