@@ -258,6 +258,15 @@ function renderProductDetails() {
     }
 
     document.title = `${product.name} | Olee ' Brownies`;
+    let metaDescription = document.querySelector('meta[name="description"]');
+
+if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+}
+
+metaDescription.content = `${product.name} | ${product.description}`;
     const photos = product.images;
     let current = 0;
 
