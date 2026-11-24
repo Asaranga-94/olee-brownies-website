@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,20 +18,108 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-XQJYJ0SX4F');
 </script>
 
 </head>
 <body>
+
 <div class="announcement-bar">• Pre-Orders & Bank Transfers Only • Island-wide Delivery Across Sri Lanka</div>
+
 <nav class="navbar">
   <div class="logo">OLEE ' BROWNIES</div>
   <a href="index.html#products" class="details-back-top">← Back to Products</a>
 </nav>
+
 <main class="product-details-page">
   <div id="productDetails"></div>
 </main>
+
 <script src="products.js"></script>
+
+<!-- Christmas Snowfall: December 1–31, 2026 -->
+<script>
+(function () {
+  const now = new Date();
+  const start = new Date(2026, 11, 1);
+  const end = new Date(2027, 0, 1);
+
+  if (now < start || now >= end) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const style = document.createElement('style');
+
+  style.textContent = `
+    #christmas-snow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 99999;
+    }
+
+    #christmas-snow span {
+      position: absolute;
+      top: -30px;
+      animation: christmas-fall linear infinite;
+      will-change: transform;
+    }
+
+    #christmas-snow .snowflake {
+      color: white;
+      text-shadow: 0 0 5px rgba(255,255,255,0.9),
+                   0 1px 5px rgba(43,27,20,0.7);
+    }
+
+    #christmas-snow .snow-dot {
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 7px 2px rgba(255,255,255,0.8);
+    }
+
+    @keyframes christmas-fall {
+      from {
+        transform: translate3d(0, -30px, 0) rotate(0deg);
+      }
+      to {
+        transform: translate3d(var(--drift), 110vh, 0) rotate(360deg);
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+
+  const snow = document.createElement('div');
+  snow.id = 'christmas-snow';
+  snow.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(snow);
+
+  for (let i = 0; i < 30; i++) {
+    const flake = document.createElement('span');
+
+    if (i < 18) {
+      flake.className = 'snowflake';
+      flake.textContent = Math.random() > 0.5 ? '❄' : '❅';
+      flake.style.fontSize = (10 + Math.random() * 13) + 'px';
+    } else {
+      flake.className = 'snow-dot';
+      const size = 2 + Math.random() * 4;
+      flake.style.width = size + 'px';
+      flake.style.height = size + 'px';
+      flake.style.filter = 'blur(' + (Math.random() * 1.5) + 'px)';
+    }
+
+    flake.style.left = Math.random() * 100 + '%';
+    flake.style.opacity = 0.5 + Math.random() * 0.5;
+    flake.style.setProperty('--drift', (Math.random() * 100 - 50) + 'px');
+    flake.style.animationDuration = (9 + Math.random() * 10) + 's';
+    flake.style.animationDelay = -(Math.random() * 19) + 's';
+
+    snow.appendChild(flake);
+  }
+})();
+</script>
+
 </body>
 </html>
