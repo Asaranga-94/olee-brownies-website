@@ -279,6 +279,80 @@ function renderProductGrid() {
     products.forEach(product => grid.appendChild(createCatalogCard(product)));
 }
 
+function setMetaTag(attribute, key, content) {
+    let tag = document.querySelector(`meta[${attribute}="${key}"]`);
+    if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attribute, key);
+        document.head.appendChild(tag);
+    }
+    tag.setAttribute("content", content);
+}
+
+function updateProductSeoMetadata(product) {
+    const title = product.seoTitle || `${product.name} | Olee ' Brownies`;
+    const description = product.seoDescription || `${product.name} | ${product.description}`;
+    const canonicalUrl = new URL(
+        `product.html?id=${encodeURIComponent(product.id)}`,
+        "https://asaranga-94.github.io/olee-brownies-website/"
+    ).href;
+    const imageUrl = new URL(product.images[0], window.location.href).href;
+
+    document.title = title;
+    setMetaTag("name", "description", description);
+
+    // Social-sharing metadata for crawlers that read the rendered page.
+    setMetaTag("property", "og:type", "product");
+    setMetaTag("property", "og:title", title);
+    setMetaTag("property", "og:description", description);
+    setMetaTag("property", "og:url", canonicalUrl);
+    setMetaTag("property", "og:image", imageUrl);
+    setMetaTag("property", "og:site_name", "Olee ' Brownies");
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+
+    const productSchema = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": product.name,
+        "description": product.description,
+        "image": product.images.map(image => new URL(image, window.location.href).href),
+        "brand": {
+            "@type": "Brand",
+            "name": "Olee ' Brownies"
+        },
+        "url": canonicalUrl
+    };
+
+    // Add an Offer only when the catalog gives one exact fixed price.
+    // Starting prices and custom prices are deliberately not converted into exact offers.
+    const fixedPrice = product.price.match(/^Rs\.\s*([\d,]+)$/i);
+    if (fixedPrice) {
+        productSchema.offers = {
+            "@type": "Offer",
+            "url": canonicalUrl,
+            "priceCurrency": "LKR",
+            "price": fixedPrice[1].replace(/,/g, ""),
+            "availability": "https://schema.org/PreOrder"
+        };
+    }
+
+    let structuredData = document.getElementById("productStructuredData");
+    if (!structuredData) {
+        structuredData = document.createElement("script");
+        structuredData.id = "productStructuredData";
+        structuredData.type = "application/ld+json";
+        document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify(productSchema);
+}
+
 function renderProductDetails() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -295,16 +369,7 @@ function renderProductDetails() {
         return;
     }
 
-    document.title = product.seoTitle || `${product.name} | Olee ' Brownies`;
-    let metaDescription = document.querySelector('meta[name="description"]');
-
-if (!metaDescription) {
-    metaDescription = document.createElement('meta');
-    metaDescription.name = 'description';
-    document.head.appendChild(metaDescription);
-}
-
-metaDescription.content = product.seoDescription || `${product.name} | ${product.description}`;
+    updateProductSeoMetadata(product);
     const photos = product.images;
     let current = 0;
 
