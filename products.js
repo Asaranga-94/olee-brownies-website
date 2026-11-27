@@ -330,15 +330,20 @@ function updateProductSeoMetadata(product) {
         "url": canonicalUrl
     };
 
-    // Add an Offer only when the catalog gives one exact fixed price.
-    // Starting prices and custom prices are deliberately not converted into exact offers.
+    // Add an Offer for exact fixed prices.
+    // Fix Large Package also has a confirmed genuine minimum order price of Rs. 5,800.
     const fixedPrice = product.price.match(/^Rs\.\s*([\d,]+)$/i);
-    if (fixedPrice) {
+    const confirmedStartingPrice = product.id === "fix-large-package"
+        ? product.price.match(/^From Rs\.\s*([\d,]+)$/i)
+        : null;
+    const offerPrice = fixedPrice || confirmedStartingPrice;
+
+    if (offerPrice) {
         productSchema.offers = {
             "@type": "Offer",
             "url": canonicalUrl,
             "priceCurrency": "LKR",
-            "price": fixedPrice[1].replace(/,/g, ""),
+            "price": offerPrice[1].replace(/,/g, ""),
             "availability": "https://schema.org/PreOrder"
         };
     }
